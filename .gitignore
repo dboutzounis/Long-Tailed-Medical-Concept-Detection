@@ -1,0 +1,31 @@
+# generated outputs (kept under $WORK, never committed)
+artifacts/
+runs/
+results/
+model_cache/
+third_party/
+venv/
+logs/
+*.pt
+*.pth
+*.pkl
+*.npz
+*.tar
+*.out
+*.err
+
+# UMLS and dataset files
+*.RRF
+.umls_cache/
+*_concepts.csv
+*_captions.csv
+concepts.csv
+cui_mapping.csv
+images/
+
+# Python and OS
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+._*
