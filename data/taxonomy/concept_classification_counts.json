@@ -1,0 +1,340 @@
+{
+  "_meta": {
+    "description": "Count of concepts per category/subcategory of concept_taxonomy.json, in taxonomy order.",
+    "grand_total": 2646
+  },
+  "categories": [
+    {
+      "category": "Imaging Modality",
+      "total": 29,
+      "subcategories": [
+        {
+          "subcategory": "Radiography (Projectional X-ray)",
+          "count": 2
+        },
+        {
+          "subcategory": "Computed Tomography (CT)",
+          "count": 9
+        },
+        {
+          "subcategory": "Magnetic Resonance Imaging (MRI)",
+          "count": 5
+        },
+        {
+          "subcategory": "Ultrasonography",
+          "count": 2
+        },
+        {
+          "subcategory": "Angiography & Vascular Imaging",
+          "count": 1
+        },
+        {
+          "subcategory": "Nuclear Medicine & Molecular Imaging",
+          "count": 6
+        },
+        {
+          "subcategory": "Optical & Other Imaging Techniques",
+          "count": 1
+        },
+        {
+          "subcategory": "General & Cross-Modality Imaging Concepts",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "category": "Anatomy",
+      "total": 1389,
+      "subcategories": [
+        {
+          "subcategory": "Body Regions & Surface Anatomy",
+          "count": 108
+        },
+        {
+          "subcategory": "Brain & Central Nervous System",
+          "count": 105
+        },
+        {
+          "subcategory": "Spinal Cord, Spinal & Peripheral Nerves, Ganglia",
+          "count": 38
+        },
+        {
+          "subcategory": "Heart & Pericardium",
+          "count": 78
+        },
+        {
+          "subcategory": "Arteries & Aorta",
+          "count": 131
+        },
+        {
+          "subcategory": "Veins & Venous System",
+          "count": 82
+        },
+        {
+          "subcategory": "Lungs, Bronchi, Trachea & Airways",
+          "count": 43
+        },
+        {
+          "subcategory": "Pleura, Mediastinum & Diaphragm",
+          "count": 24
+        },
+        {
+          "subcategory": "Esophagus, Stomach & Intestines",
+          "count": 62
+        },
+        {
+          "subcategory": "Liver, Biliary Tract & Pancreas",
+          "count": 31
+        },
+        {
+          "subcategory": "Peritoneum, Mesentery & Omentum",
+          "count": 12
+        },
+        {
+          "subcategory": "Kidneys, Ureters & Urinary Bladder",
+          "count": 35
+        },
+        {
+          "subcategory": "Male Reproductive Organs",
+          "count": 15
+        },
+        {
+          "subcategory": "Female Reproductive Organs",
+          "count": 31
+        },
+        {
+          "subcategory": "Breast",
+          "count": 9
+        },
+        {
+          "subcategory": "Endocrine Glands",
+          "count": 14
+        },
+        {
+          "subcategory": "Lymph Nodes, Spleen & Hematopoietic Tissue",
+          "count": 17
+        },
+        {
+          "subcategory": "Skull, Facial Bones & Mandible",
+          "count": 49
+        },
+        {
+          "subcategory": "Vertebral Column, Ribs & Sternum (Axial Skeleton)",
+          "count": 60
+        },
+        {
+          "subcategory": "Limb Bones & Girdles (Appendicular Skeleton)",
+          "count": 114
+        },
+        {
+          "subcategory": "Joints, Cartilage, Ligaments & Bursae",
+          "count": 43
+        },
+        {
+          "subcategory": "Muscles, Tendons & Fascia",
+          "count": 94
+        },
+        {
+          "subcategory": "Teeth & Oral Cavity",
+          "count": 50
+        },
+        {
+          "subcategory": "Paranasal Sinuses & Nasal Cavity",
+          "count": 30
+        },
+        {
+          "subcategory": "Pharynx & Larynx",
+          "count": 20
+        },
+        {
+          "subcategory": "Salivary Glands & Neck Soft Tissue",
+          "count": 12
+        },
+        {
+          "subcategory": "Eye, Orbit & Optic Pathway",
+          "count": 43
+        },
+        {
+          "subcategory": "Ear & Vestibular Apparatus",
+          "count": 17
+        },
+        {
+          "subcategory": "Skin, Subcutaneous Tissue & Body Wall",
+          "count": 22
+        }
+      ]
+    },
+    {
+      "category": "Radiological Finding",
+      "total": 146,
+      "subcategories": [
+        {
+          "subcategory": "Mass, Nodule & Lesion (Descriptive)",
+          "count": 11
+        },
+        {
+          "subcategory": "Calcification & Mineralization",
+          "count": 15
+        },
+        {
+          "subcategory": "Fluid Collection, Effusion & Edema (Descriptive)",
+          "count": 9
+        },
+        {
+          "subcategory": "Air, Gas & Lucency",
+          "count": 16
+        },
+        {
+          "subcategory": "Density, Opacity, Signal & Echogenicity",
+          "count": 10
+        },
+        {
+          "subcategory": "Texture, Margin & Shape Qualifiers",
+          "count": 22
+        },
+        {
+          "subcategory": "Size, Enlargement, Hypertrophy & Atrophy",
+          "count": 24
+        },
+        {
+          "subcategory": "Luminal Caliber: Stenosis, Dilatation & Obstruction (Descriptive)",
+          "count": 12
+        },
+        {
+          "subcategory": "Displacement, Alignment & Acquired Deformity",
+          "count": 18
+        },
+        {
+          "subcategory": "Other Imaging Descriptors",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "category": "Pathology",
+      "total": 854,
+      "subcategories": [
+        {
+          "subcategory": "Benign Neoplasm",
+          "count": 51
+        },
+        {
+          "subcategory": "Malignant Neoplasm & Metastasis",
+          "count": 81
+        },
+        {
+          "subcategory": "Neoplasm of Uncertain Behavior & Tumor-like Lesions",
+          "count": 13
+        },
+        {
+          "subcategory": "Infection & Inflammation",
+          "count": 152
+        },
+        {
+          "subcategory": "Vascular Disorders (Aneurysm, Thrombosis, Stenosis, Dissection)",
+          "count": 87
+        },
+        {
+          "subcategory": "Ischemia, Infarction & Hemorrhage",
+          "count": 68
+        },
+        {
+          "subcategory": "Trauma, Fracture & Soft-Tissue Injury",
+          "count": 9
+        },
+        {
+          "subcategory": "Degenerative, Metabolic & Fibrotic Disorders",
+          "count": 76
+        },
+        {
+          "subcategory": "Congenital & Developmental Anomalies",
+          "count": 108
+        },
+        {
+          "subcategory": "Cystic Lesions & Fluid-Filled Disorders",
+          "count": 42
+        },
+        {
+          "subcategory": "Obstructive, Herniating & Structural Disorders (Hernia, Volvulus, Fistula, Prolapse)",
+          "count": 81
+        },
+        {
+          "subcategory": "Effusions, Edema & Hematologic Disorders (as Disease)",
+          "count": 22
+        },
+        {
+          "subcategory": "Systemic, Idiopathic & Other Named Diseases",
+          "count": 64
+        }
+      ]
+    },
+    {
+      "category": "Device & Intervention",
+      "total": 103,
+      "subcategories": [
+        {
+          "subcategory": "Stents, Grafts, Coils & Vascular Devices",
+          "count": 14
+        },
+        {
+          "subcategory": "Catheters, Tubes, Drains & Shunts",
+          "count": 27
+        },
+        {
+          "subcategory": "Implants, Prostheses & Cardiac Electronic Devices",
+          "count": 15
+        },
+        {
+          "subcategory": "Orthopedic Hardware & Fixation Devices",
+          "count": 12
+        },
+        {
+          "subcategory": "Foreign Bodies & Other Implanted Materials",
+          "count": 13
+        },
+        {
+          "subcategory": "Procedures & Surgical Actions",
+          "count": 7
+        },
+        {
+          "subcategory": "Routes of Administration",
+          "count": 15
+        }
+      ]
+    },
+    {
+      "category": "Clinical Context",
+      "total": 125,
+      "subcategories": [
+        {
+          "subcategory": "Diagnostic Process, Reporting & Measurement",
+          "count": 13
+        },
+        {
+          "subcategory": "Generic Disease, Disorder & Pathologic Process",
+          "count": 5
+        },
+        {
+          "subcategory": "Physiological States & Reproductive Events",
+          "count": 18
+        },
+        {
+          "subcategory": "Body Substances & Fluids",
+          "count": 18
+        },
+        {
+          "subcategory": "Spatial, Positional & Anatomical Qualifiers",
+          "count": 35
+        },
+        {
+          "subcategory": "Clinical, Temporal & Severity Qualifiers",
+          "count": 20
+        },
+        {
+          "subcategory": "Relational, Contextual & Environmental Concepts",
+          "count": 16
+        }
+      ]
+    }
+  ]
+}

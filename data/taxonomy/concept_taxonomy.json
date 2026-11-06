@@ -1,0 +1,113 @@
+{
+  "_meta": {
+    "description": "Ordered hierarchical taxonomy for the 2,646 UMLS CUIs in the ImageCLEFmedical 2026 / ROCOv2 concept-detection dataset. The order of `categories` (and of `subcategories` within each) is significant: it encodes a topological, general-to-specific flow intended for building a directed acyclic graph. The flow mirrors radiological interpretation: how the image was acquired (Modality) -> what was imaged (Anatomy) -> what is observed (Radiological Finding) -> what it means (Pathology) -> what artificial objects/actions are present (Device & Intervention) -> abstract clinical context.",
+    "dag_ordering": "Edges should flow from earlier categories toward later ones. Category 1 (Modality) is the root layer; Category 6 (Clinical Context) is the most downstream/abstract layer.",
+    "n_concepts": 2646
+  },
+  "categories": [
+    {
+      "name": "Imaging Modality",
+      "subcategories": [
+        "Radiography (Projectional X-ray)",
+        "Computed Tomography (CT)",
+        "Magnetic Resonance Imaging (MRI)",
+        "Ultrasonography",
+        "Angiography & Vascular Imaging",
+        "Nuclear Medicine & Molecular Imaging",
+        "Optical & Other Imaging Techniques",
+        "General & Cross-Modality Imaging Concepts"
+      ]
+    },
+    {
+      "name": "Anatomy",
+      "subcategories": [
+        "Body Regions & Surface Anatomy",
+        "Brain & Central Nervous System",
+        "Spinal Cord, Spinal & Peripheral Nerves, Ganglia",
+        "Heart & Pericardium",
+        "Arteries & Aorta",
+        "Veins & Venous System",
+        "Lungs, Bronchi, Trachea & Airways",
+        "Pleura, Mediastinum & Diaphragm",
+        "Esophagus, Stomach & Intestines",
+        "Liver, Biliary Tract & Pancreas",
+        "Peritoneum, Mesentery & Omentum",
+        "Kidneys, Ureters & Urinary Bladder",
+        "Male Reproductive Organs",
+        "Female Reproductive Organs",
+        "Breast",
+        "Endocrine Glands",
+        "Lymph Nodes, Spleen & Hematopoietic Tissue",
+        "Skull, Facial Bones & Mandible",
+        "Vertebral Column, Ribs & Sternum (Axial Skeleton)",
+        "Limb Bones & Girdles (Appendicular Skeleton)",
+        "Joints, Cartilage, Ligaments & Bursae",
+        "Muscles, Tendons & Fascia",
+        "Teeth & Oral Cavity",
+        "Paranasal Sinuses & Nasal Cavity",
+        "Pharynx & Larynx",
+        "Salivary Glands & Neck Soft Tissue",
+        "Eye, Orbit & Optic Pathway",
+        "Ear & Vestibular Apparatus",
+        "Skin, Subcutaneous Tissue & Body Wall"
+      ]
+    },
+    {
+      "name": "Radiological Finding",
+      "subcategories": [
+        "Mass, Nodule & Lesion (Descriptive)",
+        "Calcification & Mineralization",
+        "Fluid Collection, Effusion & Edema (Descriptive)",
+        "Air, Gas & Lucency",
+        "Density, Opacity, Signal & Echogenicity",
+        "Texture, Margin & Shape Qualifiers",
+        "Size, Enlargement, Hypertrophy & Atrophy",
+        "Luminal Caliber: Stenosis, Dilatation & Obstruction (Descriptive)",
+        "Displacement, Alignment & Acquired Deformity",
+        "Other Imaging Descriptors"
+      ]
+    },
+    {
+      "name": "Pathology",
+      "subcategories": [
+        "Benign Neoplasm",
+        "Malignant Neoplasm & Metastasis",
+        "Neoplasm of Uncertain Behavior & Tumor-like Lesions",
+        "Infection & Inflammation",
+        "Vascular Disorders (Aneurysm, Thrombosis, Stenosis, Dissection)",
+        "Ischemia, Infarction & Hemorrhage",
+        "Trauma, Fracture & Soft-Tissue Injury",
+        "Degenerative, Metabolic & Fibrotic Disorders",
+        "Congenital & Developmental Anomalies",
+        "Cystic Lesions & Fluid-Filled Disorders",
+        "Obstructive, Herniating & Structural Disorders (Hernia, Volvulus, Fistula, Prolapse)",
+        "Effusions, Edema & Hematologic Disorders (as Disease)",
+        "Systemic, Idiopathic & Other Named Diseases"
+      ]
+    },
+    {
+      "name": "Device & Intervention",
+      "subcategories": [
+        "Stents, Grafts, Coils & Vascular Devices",
+        "Catheters, Tubes, Drains & Shunts",
+        "Implants, Prostheses & Cardiac Electronic Devices",
+        "Orthopedic Hardware & Fixation Devices",
+        "Foreign Bodies & Other Implanted Materials",
+        "Procedures & Surgical Actions",
+        "Routes of Administration"
+      ]
+    },
+    {
+      "name": "Clinical Context",
+      "subcategories": [
+        "Diagnostic Process, Reporting & Measurement",
+        "Generic Disease, Disorder & Pathologic Process",
+        "Physiological States & Reproductive Events",
+        "Body Substances & Fluids",
+        "Spatial, Positional & Anatomical Qualifiers",
+        "Clinical, Temporal & Severity Qualifiers",
+        "Relational, Contextual & Environmental Concepts"
+      ]
+    }
+  ]
+}
