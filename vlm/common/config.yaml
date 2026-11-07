@@ -1,0 +1,28 @@
+# Shared settings for the vision-language encoders (zero-shot, text embeddings, Grad-ECLIP).
+# Shards, the label binarizer and the extraction loader settings come from base_config.yaml,
+# so images are read in the same order as during feature extraction.
+base_config: base_config.yaml
+
+paths:
+  cui_mapping: $WORK/imageclefmed2026_webdataset/cui_mapping.csv
+  hf_cache: $WORK/Long-Tailed-Medical-Concept-Detection/model_cache
+  out_root: $WORK/Long-Tailed-Medical-Concept-Detection/results/zero_shot
+
+training:
+  precision: bf16  # bf16 | fp32
+
+models:
+  biomedclip:
+    eval_chunk: 256  # images per forward pass
+  medsiglip:
+    eval_chunk: 64
+    grad_ckpt: true
+  medimageinsight:
+    eval_chunk: 32
+    repo_dir: $WORK/Long-Tailed-Medical-Concept-Detection/third_party/MedImageInsights
+    model_dir: $WORK/Long-Tailed-Medical-Concept-Detection/third_party/MedImageInsights/2024.09.27
+    vision_model_name: medimageinsigt-v1.0.0.pt  # file name as shipped with the port
+    language_model_name: language_model.pth
+  raddino:
+    eval_chunk: 128
+    grad_ckpt: true

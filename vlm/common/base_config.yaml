@@ -1,0 +1,13 @@
+# Data used by every vision-language encoder experiment.
+paths:
+  train_shards: "$WORK/imageclefmed2026_webdataset/train-shards-{000000..000091}.tar"
+  val_shards: "$WORK/imageclefmed2026_webdataset/val-shards-{000000..000019}.tar"
+  test_shards: "$WORK/imageclefmed2026_webdataset/test-shards-{000000..000007}.tar"
+  mlb: "$WORK/Long-Tailed-Medical-Concept-Detection/artifacts/mlb.pkl"
+
+data:
+  num_classes: 2645
+  image_size: 224
+  batch_size: 256
+  num_workers: 4
+  prefetch_factor: 2
