@@ -1,0 +1,71 @@
+# LoRA fine-tuning of the four vision encoders (Section 4.4.6). $WORK is expanded when loaded.
+
+paths:
+  train_shards: "$WORK/imageclefmed2026_webdataset/train-shards-{000000..000091}.tar"
+  val_shards: "$WORK/imageclefmed2026_webdataset/val-shards-{000000..000019}.tar"
+  test_shards: "$WORK/imageclefmed2026_webdataset/test-shards-{000000..000007}.tar"
+  mlb: "$WORK/Long-Tailed-Medical-Concept-Detection/artifacts/mlb.pkl"
+  hf_cache: "$WORK/Long-Tailed-Medical-Concept-Detection/model_cache"
+  # the jointly trained head starts from <frozen_heads_root>/<model>/linear/head.pt
+  frozen_heads_root: "$WORK/Long-Tailed-Medical-Concept-Detection/artifacts/frozen_heads"
+  out_root: "$WORK/Long-Tailed-Medical-Concept-Detection/runs/lora"
+  features_root: "$WORK/Long-Tailed-Medical-Concept-Detection/artifacts/lora"
+
+data:
+  train_size: 90359      # defines one epoch = train_size // effective_batch optimiser steps
+  num_workers: 8         # per GPU, training loader
+  prefetch_factor: 4
+  shuffle_buffer: 5000
+
+# same loader settings as the frozen feature extraction, so rows come out in the same order
+extract:
+  batch_size: 256
+  num_workers: 4
+  prefetch_factor: 2
+
+lora:
+  rank: 8
+  alpha: 16              # scaling = alpha / rank = 2
+  dora: false            # true -> DoRA (magnitude/direction decomposition)
+  # targets: every nn.Linear inside every transformer block (attention q/k/v,
+  # attention output, MLP). Patch embedding, pooling head and projection stay frozen.
+
+training:
+  seed: 42
+  max_epochs: 30         # safety cap
+  patience: 5            # early stopping on val loss, strict decrease
+  effective_batch: 512   # micro-batch x GPUs x grad-accumulation, same for every encoder
+  lr_lora: 2.0e-4
+  lr_head: 1.0e-4        # = frozen-heads lr; head starts from the frozen linear probe
+  weight_decay: 1.0e-4   # LoRA matrices and head weight only
+  grad_clip: 1.0
+  precision: bf16        # encoder forward under bf16 autocast (as at extraction); head/loss fp32
+  deterministic: true    # deterministic cuDNN/cuBLAS, seeded data stream
+  deterministic_attention: true  # force the exact (math) SDPA kernel: slower, reproducible backward
+
+asl:
+  gamma_neg: 4.0
+  gamma_pos: 0.0
+  clip: 0.02
+
+models:
+  biomedclip:
+    batch_size: 128      # per GPU; x4 GPUs = 512 -> no accumulation
+    eval_chunk: 256
+    grad_ckpt: false
+  medsiglip:
+    batch_size: 64       # x4 x 2 accum = 512
+    eval_chunk: 64
+    grad_ckpt: true
+  medimageinsight:
+    batch_size: 32       # x4 x 4 accum = 512
+    eval_chunk: 32
+    grad_ckpt: true
+    repo_dir: "$WORK/Long-Tailed-Medical-Concept-Detection/third_party/MedImageInsights"
+    model_dir: "$WORK/Long-Tailed-Medical-Concept-Detection/third_party/MedImageInsights/2024.09.27"
+    vision_model_name: "medimageinsigt-v1.0.0.pt"  # file name as shipped with the port
+    language_model_name: "language_model.pth"
+  raddino:
+    batch_size: 64       # x4 x 2 accum = 512
+    eval_chunk: 128
+    grad_ckpt: true
