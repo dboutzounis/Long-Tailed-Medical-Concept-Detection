@@ -1,0 +1,32 @@
+# Grad-ECLIP on frozen BiomedCLIP (run_gradeclip.py). Encoder settings come from vlm/common/config.yaml.
+encoder: biomedclip
+
+paths:
+  features_root: $WORK/Long-Tailed-Medical-Concept-Detection/artifacts     # <enc>_features/{test_keys.pkl,test_embs.pt,train_labels.pt}
+  head_dir: $WORK/Long-Tailed-Medical-Concept-Detection/artifacts/frozen_heads/biomedclip/linear
+  text_embs: $WORK/Long-Tailed-Medical-Concept-Detection/artifacts/text_embs/biomedclip.pt
+  out_dir: $WORK/Long-Tailed-Medical-Concept-Detection/results/gradeclip/biomedclip
+
+subset:
+  n_images: 500        # random test images (fixed by seed)
+  seed: 42
+  cuis: null           # null = every ground-truth CUI of each image; or a list, e.g. [C0040405, C0027651]
+
+data:
+  batch_size: 64       # loader batch only (maps are computed per image)
+
+method:
+  block_idx: -1        # last transformer block, as in the paper
+
+faithfulness:
+  n_steps: 28          # 196 patches -> 7 patches per step
+  blur_sigma: 10.0     # Gaussian blur (pixels at 224x224) used as the "removed" content
+  batch_size: 128      # forward-pass chunk for perturbed images
+
+sanity:
+  n_determinism: 20            # images whose first map is recomputed and compared
+  n_randomization_images: 100  # images used for the model-randomisation test
+  randomization_seed: 0
+
+summary:
+  n_boot: 2000         # bootstrap resamples over images for 95% CIs
