@@ -1,0 +1,9 @@
+name	config	decision_threshold
+cp_n32	configs/cp_n32.yaml	0.75
+cp_n64	configs/cp_n64.yaml	0.75
+cp_n128	configs/cp_n128.yaml	0.75
+cp_n256	configs/cp_n256.yaml	0.82
+tr_n32	configs/tr_n32.yaml	0.77
+tr_n64	configs/tr_n64.yaml	0.76
+tr_n128	configs/tr_n128.yaml	0.74
+tr_n256	configs/tr_n256.yaml	0.76
